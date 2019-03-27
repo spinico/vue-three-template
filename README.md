@@ -12,7 +12,7 @@ This template also includes predefined Visual Studio Code task and debug configu
 
 - Use F5 (CTRL + SHIFT + B ) to launch a debug session, this will start the development server and open a Google Chrome instance to the local url.
 
-> **REMARK** : this template presents how to separate the SFC (Single-File Component) into view (.html) and logic (.ts) files. For example, the *HelloWorld3D* component has a vue component file (HelloWordl3D.vue) that contains the scoped styles but also links both the view (HelloWorld3D.html) and logic (HelloWorld3D.ts) files. This structure is optional, but may be of interest to minimize potential code versioning conflicts.
+> **REMARK** : this template presents how to separate the SFC (Single-File Component) into view (.html) and logic (.ts) files. For example, the *HelloWorld3D* component has a vue component file (HelloWorld3D.vue) that contains the scoped styles but also links both the view (HelloWorld3D.html) and logic (HelloWorld3D.ts) files. This structure is optional, but may be of interest to minimize potential code versioning conflicts.
 
 ## Project setup
 ```
