@@ -1,0 +1,57 @@
+{
+    // See https://go.microsoft.com/fwlink/?LinkId=733558
+    // for the documentation about the tasks.json format
+    "version": "2.0.0",
+    "tasks": [
+        {
+            "label": "CLI Service",
+            "type": "npm",
+            "script": "serve",
+            "isBackground": true,
+            // This task should run (or be already running) before some debug tasks.
+            // The problem is that this task is a development server and since it never
+            // exits, VSCode complains with a "The specified task cannot be tracked" popup
+            // message. The following settings let the task run.  
+            // ref. https://stackoverflow.com/a/54017304          
+            "problemMatcher": [{
+                // Note: ALL the following settings are required, even though none are important
+                // problemMatcher.pattern.regexp
+                // problemMatcher.pattern.file
+                // problemMatcher.pattern.location
+                // problemMatcher.pattern.message
+                // problemMatcher.background.activeOnStart
+                // problemMatcher.background.beginsPattern
+                // problemMatcher.background.endsPattern
+                "pattern": [
+                  {
+                    "regexp": ".",                    
+                    "file": 1,
+                    "location": 2,                    
+                    "message": 3
+                  }
+                ],
+                "background": {
+                  "activeOnStart": true,
+                  "beginsPattern": ".",
+                  // Will proceed to launch debug configuration when a match for the line starting
+                  // with "Time:" is detected. Note: to launch without waiting for the end pattern 
+                  // match, set value to "."
+                  "endsPattern": "^Time:.*"  
+                }
+            }],            
+            "presentation": {
+                // silent: only reveals the terminal if no problem matcher is associated with
+                // the task and an errors occurs executing it
+                "reveal": "always",
+                "panel": "dedicated"
+            },
+            // Ctrl + Shift + B (or F5)
+            "group": {
+                "kind": "build",
+                "isDefault": true
+            }          
+        }
+        
+    ]
+
+}
