@@ -4,6 +4,18 @@
     "version": "2.0.0",
     "tasks": [
         {
+            "type": "npm",
+            "script": "build",
+            "problemMatcher": [
+              "$tslint5"
+            ],
+            // Start this task with Ctrl + Shift + B shortcut
+            "group": {
+              "kind": "build",
+              "isDefault": true
+            }
+        },        
+        {
             "label": "CLI Service",
             "type": "npm",
             "script": "serve",
