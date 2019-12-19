@@ -2,7 +2,7 @@ import { Component, Prop, Vue } from 'vue-property-decorator';
 import WithRender from './HelloWorld3D.html';
 
 import * as THREE from 'three';
-import 'three/examples/js/controls/OrbitControls';
+import { OrbitControls } from 'three/examples/jsm/controls/OrbitControls';
 
 @WithRender
 @Component
@@ -12,7 +12,7 @@ export default class HelloWorld3D extends Vue {
     private renderer!: THREE.WebGLRenderer;
     private scene = new THREE.Scene();
     private camera = new THREE.PerspectiveCamera(70, 640 / 480, 0.01, 100);
-    private controls!: THREE.OrbitControls;
+    private controls!: OrbitControls;
 
     private created() {
       if (!(this.renderer instanceof THREE.WebGLRenderer)) {
@@ -33,7 +33,7 @@ export default class HelloWorld3D extends Vue {
 
         this.camera.position.set(-10, 10, 10);
 
-        this.controls = new THREE.OrbitControls(this.camera, container);
+        this.controls = new OrbitControls(this.camera, container);
         this.controls.minDistance = 0;
         this.controls.maxDistance = 500;
         this.controls.autoRotate = true;
