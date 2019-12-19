@@ -1,0 +1,21 @@
+{
+  "files.exclude": {
+    "**/.git": true,
+    "**/.svn": true,
+    "**/.DS_Store": true,
+    "node_modules": true,
+    "dist": true,
+    "**/__pycache__": true,
+    "**/*.js": { "when": "$(basename).ts"},
+    "**/*.js.map": true    
+  },
+  "editor.rulers": [120],
+  "[git-commit]": {
+    "editor.rulers": [50]
+  },
+  "workbench.settings.editor": "json",
+  "workbench.settings.useSplitJSON": true,
+  "workbench.colorCustomizations": {
+    "editorRuler.foreground": "#276679"
+  }
+}

@@ -17,10 +17,6 @@
     "paths": {
       "@/*": [
         "src/*"
-      ],
-      // To override the "types" specified in the package.json of the Three module
-      "three":[
-        "./node_modules/@types/three/index.d.ts"
       ]
     },
     "lib": [
